@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA Enterprise Service Desk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter background */
+            color: #475569; /* Slate 600 for default text */
+        }
+        /* Parallax background for the hero section */
+        .hero-parallax {
+            /* Updated background image URL */
+            background-image: url('https://images.unsplash.com/photo-1629904853716-f0bc54eea481?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative; /* Needed for overlay */
+        }
+        /* Overlay for better text readability on parallax image - adjusted transparency and color */
+        .hero-overlay {
+            background-color: rgba(30, 41, 59, 0.75); /* Slate 900 with more transparency */
+        }
+
+        /* Subtle background graphic for capabilities section */
+        #capabilities {
+             background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23cbd5e1" fill-opacity="0.2"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm10 10v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm9-21v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-31 15v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm20-25v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-11 6v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm17 19v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-13-9v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm-18-7v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm24-9v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-repeat: repeat;
+        }
+
+        /* Simple animation for elements on scroll (optional) */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "08b25be7-dfb3-435b-85f8-87d1b96582ae",
+        apiHost: "https://flowise.askaibot.com",
+    })
+</script>
+    <header class="hero-parallax text-white py-32 md:py-48 rounded-b-lg shadow-lg">
+        <div class="hero-overlay absolute inset-0 rounded-b-lg"></div> <div class="container mx-auto px-6 text-center relative z-10"> <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight text-white">VA Enterprise Service Desk</h1>
+            <p class="text-xl md:text-2xl mb-10 opacity-90 text-gray-200">Streamlining Your IT Operations for Peak Performance</p>
+            <a href="#capabilities" class="bg-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">Explore Capabilities</a>
+        </div>
+    </header>
+
+    <section id="capabilities" class="py-20 md:py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-slate-700 fade-in-up">Our ITSM Platform Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=100&q=80" alt="Incident Management Icon" class="mx-auto mb-6 rounded-full w-24 h-24 object-cover shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-700">Incident Management</h3>
+                    <p class="text-slate-600">Rapidly identify, prioritize, and resolve IT incidents to minimize impact on your business operations.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in-up" style="transition-delay: 0.1s;">
+                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=100&q=80" alt="Service Catalog Icon" class="mx-auto mb-6 rounded-full w-24 h-24 object-cover shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-700">Service Catalog</h3>
+                    <p class="text-slate-600">Provide a user-friendly portal for employees to easily request IT services and assets.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center fade-in-up" style="transition-delay: 0.2s;">
+                     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=100&q=80" alt="Knowledge Base Icon" class="mx-auto mb-6 rounded-full w-24 h-24 object-cover shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-700">Knowledge Management</h3>
+                    <p class="text-slate-600">Empower users and support staff with a centralized, searchable repository of solutions and information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-200 text-gray-800 py-20 md:py-24 rounded-t-lg shadow-lg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-slate-700 fade-in-up">Get In Touch</h2>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md fade-in-up" style="transition-delay: 0.1s;">
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 VA Enterprise Service Desk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for fade-in-up animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in-up');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+</body>
+</html>
